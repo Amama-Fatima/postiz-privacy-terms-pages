@@ -35,6 +35,7 @@ export async function middleware(request: NextRequest) {
   try {
     const cleanHeaders = new Headers();
 
+    // Copy all headers including cookies
     request.headers.forEach((value, key) => {
       const lowerKey = key.toLowerCase();
       if (
@@ -48,18 +49,60 @@ export async function middleware(request: NextRequest) {
 
     cleanHeaders.set("host", new URL(railwayUrl).host);
 
+    // Ensure we're forwarding the origin for CORS
+    cleanHeaders.set("origin", railwayUrl);
+
     const response = await fetch(targetUrl, {
       method: request.method,
       headers: cleanHeaders,
+      redirect: "manual", // Don't follow redirects automatically
       body:
         request.method !== "GET" && request.method !== "HEAD"
           ? await request.text()
           : undefined,
     });
 
+    // Handle redirects from Railway - rewrite to use our domain
+    if (response.status >= 300 && response.status < 400) {
+      const location = response.headers.get("location");
+      if (location) {
+        // If it's a redirect to the Railway URL, change it to our domain
+        let newLocation = location;
+        if (location.startsWith(railwayUrl)) {
+          newLocation = location.replace(
+            railwayUrl,
+            `https://${request.headers.get("host")}`
+          );
+        } else if (location.startsWith("/")) {
+          // Relative redirect - make it use our domain
+          newLocation = `https://${request.headers.get("host")}${location}`;
+        }
+
+        // Create response with updated location
+        const redirectResponse = new NextResponse(null, {
+          status: response.status,
+          statusText: response.statusText,
+        });
+
+        redirectResponse.headers.set("location", newLocation);
+
+        // Copy Set-Cookie headers to maintain session
+        response.headers.forEach((value, key) => {
+          if (key.toLowerCase() === "set-cookie") {
+            redirectResponse.headers.append("set-cookie", value);
+          }
+        });
+
+        return redirectResponse;
+      }
+    }
+
     const responseHeaders = new Headers(response.headers);
     responseHeaders.delete("content-encoding");
     responseHeaders.delete("transfer-encoding");
+
+    // Important: Don't delete Set-Cookie headers - we need them for auth!
+    // Railway sets these and we need to pass them to the browser
 
     const body = await response.arrayBuffer();
 
@@ -71,7 +114,6 @@ export async function middleware(request: NextRequest) {
         let html = new TextDecoder("utf-8").decode(body);
 
         // Replace ALL postiz.com URLs with your custom domain
-        // This catches both /terms and /terms-of-service variants
         html = html.replace(
           /https:\/\/postiz\.com\/terms-of-service/gi,
           "https://postiz.kingofautomation.com/terms"
@@ -89,18 +131,14 @@ export async function middleware(request: NextRequest) {
           "https://postiz.kingofautomation.com/privacy"
         );
 
-        // Also catch any href="postiz.com/..." without https
+        // Replace Railway URL with custom domain in HTML (for API calls, etc.)
         html = html.replace(
-          /href="postiz\.com\/terms"/gi,
-          'href="https://postiz.kingofautomation.com/terms"'
-        );
-        html = html.replace(
-          /href="postiz\.com\/privacy"/gi,
-          'href="https://postiz.kingofautomation.com/privacy"'
+          new RegExp(railwayUrl.replace(/[.*+?^${}()|[\]\\]/g, "\\$&"), "gi"),
+          `https://${request.headers.get("host")}`
         );
 
         // Update content-length header since we modified the content
-        responseHeaders.set("content-length", new Blob([html]).size.toString());
+        responseHeaders.delete("content-length"); // Let browser calculate it
 
         return new NextResponse(html, {
           status: response.status,
