@@ -15,10 +15,10 @@ export default function TermsPage() {
               1. Acceptance of Terms
             </h2>
             <p>
-              By accessing and using Postiz ("the Service"), you accept and
-              agree to be bound by the terms and provisions of this agreement.
-              If you do not agree to these Terms of Service, please do not use
-              the Service.
+              By accessing and using Postiz (&quot;the Service&quot;), you
+              accept and agree to be bound by the terms and provisions of this
+              agreement. If you do not agree to these Terms of Service, please
+              do not use the Service.
             </p>
           </section>
 
@@ -85,7 +85,9 @@ export default function TermsPage() {
               acknowledge that:
             </p>
             <ul className="list-disc pl-6 space-y-2 mt-3">
-              <li>You must comply with each platform's terms of service</li>
+              <li>
+                You must comply with each platform&apos;s terms of service
+              </li>
               <li>
                 We are not responsible for actions taken by third-party
                 platforms
@@ -151,7 +153,7 @@ export default function TermsPage() {
             <p>
               We reserve the right to modify these Terms at any time. We will
               notify users of any material changes by posting the new Terms on
-              this page and updating the "Last updated" date.
+              this page and updating the &quot;Last updated&quot; date.
             </p>
           </section>
 

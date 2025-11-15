@@ -15,11 +15,11 @@ export default function PrivacyPage() {
               1. Introduction
             </h2>
             <p>
-              Welcome to Postiz ("we," "our," or "us"). We are committed to
-              protecting your personal information and your right to privacy.
-              This Privacy Policy explains how we collect, use, disclose, and
-              safeguard your information when you use our social media
-              management platform.
+              Welcome to Postiz (&quot;we,&quot; &quot;our,&quot; or
+              &quot;us&quot;). We are committed to protecting your personal
+              information and your right to privacy. This Privacy Policy
+              explains how we collect, use, disclose, and safeguard your
+              information when you use our social media management platform.
             </p>
           </section>
 
@@ -86,8 +86,8 @@ export default function PrivacyPage() {
             <ul className="list-disc pl-6 space-y-2">
               <li>
                 <strong>Social Media Platforms:</strong> We share your content
-                with the social media platforms you've connected (TikTok, Meta,
-                etc.) to post on your behalf
+                with the social media platforms you&apos;ve connected (TikTok,
+                Meta, etc.) to post on your behalf
               </li>
               <li>
                 <strong>Service Providers:</strong> We work with third-party
@@ -154,7 +154,7 @@ export default function PrivacyPage() {
 
           <section>
             <h2 className="text-xl font-semibold text-gray-900 mb-3">
-              9. Children's Privacy
+              9. Children&apos;s Privacy
             </h2>
             <p>
               Our service is not intended for users under the age of 13 (or 16
@@ -169,7 +169,7 @@ export default function PrivacyPage() {
             <p>
               We may update this Privacy Policy from time to time. We will
               notify you of any changes by posting the new policy on this page
-              and updating the "Last updated" date.
+              and updating the &quot;Last updated&quot; date.
             </p>
           </section>
 
