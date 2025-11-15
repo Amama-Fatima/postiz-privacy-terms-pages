@@ -70,7 +70,8 @@ export async function middleware(request: NextRequest) {
         // Decode the response body as text
         let html = new TextDecoder("utf-8").decode(body);
 
-        // Replace hardcoded Postiz URLs with your custom domain
+        // Replace ALL postiz.com URLs with your custom domain
+        // This catches both /terms and /terms-of-service variants
         html = html.replace(
           /https:\/\/postiz\.com\/terms-of-service/gi,
           "https://postiz.kingofautomation.com/terms"
@@ -79,10 +80,24 @@ export async function middleware(request: NextRequest) {
           /https:\/\/postiz\.com\/privacy-policy/gi,
           "https://postiz.kingofautomation.com/privacy"
         );
+        html = html.replace(
+          /https:\/\/postiz\.com\/terms/gi,
+          "https://postiz.kingofautomation.com/terms"
+        );
+        html = html.replace(
+          /https:\/\/postiz\.com\/privacy/gi,
+          "https://postiz.kingofautomation.com/privacy"
+        );
 
-        // Also replace any relative links that might exist
-        html = html.replace(/\/terms-of-service/g, "/terms");
-        html = html.replace(/\/privacy-policy/g, "/privacy");
+        // Also catch any href="postiz.com/..." without https
+        html = html.replace(
+          /href="postiz\.com\/terms"/gi,
+          'href="https://postiz.kingofautomation.com/terms"'
+        );
+        html = html.replace(
+          /href="postiz\.com\/privacy"/gi,
+          'href="https://postiz.kingofautomation.com/privacy"'
+        );
 
         // Update content-length header since we modified the content
         responseHeaders.set("content-length", new Blob([html]).size.toString());
