@@ -5,8 +5,12 @@ export async function middleware(request: NextRequest) {
   const path = request.nextUrl.pathname;
 
   // Don't proxy privacy and terms pages - let Next.js handle them
-  if (path === "/privacy" || path === "/terms") {
-    return NextResponse.next();
+  if (path === "/privacy") {
+    return NextResponse.rewrite(new URL("/privacy.html", request.url));
+  }
+
+  if (path === "/terms") {
+    return NextResponse.rewrite(new URL("/terms.html", request.url));
   }
 
   // Proxy everything else to Railway
@@ -67,12 +71,5 @@ export async function middleware(request: NextRequest) {
 }
 
 export const config = {
-  matcher: [
-    /*
-     * Match all request paths except for:
-     * - api (API routes)
-     * - _next/webpack-hmr (Next.js HMR)
-     */
-    "/((?!api|_next/webpack-hmr).*)",
-  ],
+  matcher: ["/((?!_next/static|_next/image|favicon.ico|.*\\.html).*)"],
 };
