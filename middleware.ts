@@ -4,7 +4,7 @@ import type { NextRequest } from "next/server";
 export async function middleware(request: NextRequest) {
   const path = request.nextUrl.pathname;
 
-  // Don't proxy privacy and terms pages - let Next.js handle them
+  // Serve static HTML files for privacy and terms
   if (path === "/privacy") {
     return NextResponse.rewrite(new URL("/privacy.html", request.url));
   }
@@ -13,19 +13,21 @@ export async function middleware(request: NextRequest) {
     return NextResponse.rewrite(new URL("/terms.html", request.url));
   }
 
-  // Proxy everything else to Railway
+  // For static HTML files themselves, let Next.js serve them
+  if (path.endsWith(".html")) {
+    return NextResponse.next();
+  }
+
+  // Proxy EVERYTHING else to Railway (including _next/static)
   const railwayUrl =
     "https://gitroomhqpostiz-applatest-production-6b33.up.railway.app";
   const targetUrl = `${railwayUrl}${path}${request.nextUrl.search}`;
 
   try {
-    // Create clean headers
     const cleanHeaders = new Headers();
 
-    // Copy important headers except cookies and connection-specific headers
     request.headers.forEach((value, key) => {
       const lowerKey = key.toLowerCase();
-      // Skip connection-specific headers initially
       if (
         lowerKey !== "host" &&
         lowerKey !== "connection" &&
@@ -35,11 +37,7 @@ export async function middleware(request: NextRequest) {
       }
     });
 
-    // Set the correct host for Railway
     cleanHeaders.set("host", new URL(railwayUrl).host);
-
-    // Forward cookies directly - let Railway handle what it needs
-    // The browser will send cookies set by previous responses from Railway
 
     const response = await fetch(targetUrl, {
       method: request.method,
@@ -50,10 +48,7 @@ export async function middleware(request: NextRequest) {
           : undefined,
     });
 
-    // Copy response headers
     const responseHeaders = new Headers(response.headers);
-
-    // Remove headers that might cause issues
     responseHeaders.delete("content-encoding");
     responseHeaders.delete("transfer-encoding");
 
@@ -71,5 +66,10 @@ export async function middleware(request: NextRequest) {
 }
 
 export const config = {
-  matcher: ["/((?!_next/static|_next/image|favicon.ico|.*\\.html).*)"],
+  matcher: [
+    /*
+     * Match all paths except favicon
+     */
+    "/((?!favicon.ico).*)",
+  ],
 };
