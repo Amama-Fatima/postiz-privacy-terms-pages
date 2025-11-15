@@ -54,6 +54,47 @@ export async function middleware(request: NextRequest) {
 
     const body = await response.arrayBuffer();
 
+    // Check if response is HTML and rewrite URLs
+    const contentType = response.headers.get("content-type");
+    if (contentType && contentType.includes("text/html")) {
+      try {
+        // Decode the response body as text
+        let html = new TextDecoder("utf-8").decode(body);
+
+        // Replace hardcoded Postiz URLs with your custom domain
+        html = html.replace(
+          /https:\/\/postiz\.com\/terms-of-service/gi,
+          "https://postiz.kingofautomation.com/terms"
+        );
+        html = html.replace(
+          /https:\/\/postiz\.com\/privacy-policy/gi,
+          "https://postiz.kingofautomation.com/privacy"
+        );
+
+        // Also replace any relative links that might exist
+        html = html.replace(/\/terms-of-service/g, "/terms");
+        html = html.replace(/\/privacy-policy/g, "/privacy");
+
+        // Update content-length header since we modified the content
+        responseHeaders.set("content-length", new Blob([html]).size.toString());
+
+        return new NextResponse(html, {
+          status: response.status,
+          statusText: response.statusText,
+          headers: responseHeaders,
+        });
+      } catch (decodeError) {
+        // If decoding fails, return original response
+        console.error("Failed to decode HTML for URL rewriting:", decodeError);
+        return new NextResponse(body, {
+          status: response.status,
+          statusText: response.statusText,
+          headers: responseHeaders,
+        });
+      }
+    }
+
+    // For non-HTML responses, return as-is
     return new NextResponse(body, {
       status: response.status,
       statusText: response.statusText,
