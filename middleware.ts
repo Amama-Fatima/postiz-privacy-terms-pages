@@ -13,6 +13,15 @@ export async function middleware(request: NextRequest) {
     return NextResponse.rewrite(new URL("/terms.html", request.url));
   }
 
+  // Redirect old Postiz URLs to our pages (for when JS changes the URL)
+  if (path === "/terms-of-service") {
+    return NextResponse.redirect(new URL("/terms", request.url), 301);
+  }
+
+  if (path === "/privacy-policy") {
+    return NextResponse.redirect(new URL("/privacy", request.url), 301);
+  }
+
   // For static HTML files themselves, let Next.js serve them
   if (path.endsWith(".html")) {
     return NextResponse.next();
