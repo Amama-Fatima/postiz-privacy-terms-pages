@@ -4,6 +4,12 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Terms of Service - Postiz</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;1,500;1,600&display=swap"
+      rel="stylesheet"
+    />
     <style>
       * {
         margin: 0;
@@ -12,239 +18,407 @@
       }
 
       body {
-        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
-          "Helvetica Neue", Arial, sans-serif;
+        font-family: "Plus Jakarta Sans", -apple-system, BlinkMacSystemFont,
+          "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
         line-height: 1.6;
-        color: #374151;
-        background-color: #f9fafb;
+        color: #ffffff;
+        background-color: #000000;
+        min-height: 100vh;
       }
 
-      .container {
-        max-width: 56rem;
+      /* Header */
+      header {
+        background-color: #1a1a1a;
+        border-bottom: 1px solid #2a2a2a;
+        padding: 1rem 2rem;
+        position: sticky;
+        top: 0;
+        z-index: 100;
+      }
+
+      nav {
+        max-width: 1400px;
         margin: 0 auto;
-        padding: 3rem 1rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
       }
 
-      .card {
-        background: white;
-        border-radius: 0.5rem;
-        box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1);
-        padding: 2rem;
+      .logo {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        font-size: 1.5rem;
+        font-weight: 700;
+        color: #ffffff;
+        text-decoration: none;
+      }
+
+      .logo-icon {
+        width: 32px;
+        height: 32px;
+        background: linear-gradient(135deg, #8b5cf6 0%, #a78bfa 100%);
+        border-radius: 6px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: 700;
+        font-size: 1.2rem;
+      }
+
+      .nav-buttons {
+        display: flex;
+        gap: 1rem;
+        align-items: center;
+      }
+
+      .btn {
+        padding: 0.625rem 1.5rem;
+        border-radius: 50px;
+        text-decoration: none;
+        font-weight: 500;
+        font-size: 0.95rem;
+        transition: all 0.2s;
+        border: 1px solid transparent;
+        display: inline-block;
+      }
+
+      .btn-login {
+        color: #ffffff;
+        border-color: #3a3a3a;
+      }
+
+      .btn-login:hover {
+        border-color: #8b5cf6;
+      }
+
+      .btn-signup {
+        background-color: #ffffff;
+        color: #000000;
+        font-weight: 600;
+      }
+
+      .btn-signup:hover {
+        background-color: #f0f0f0;
+      }
+
+      /* Main Content */
+      .container {
+        max-width: 900px;
+        margin: 0 auto;
+        padding: 4rem 2rem;
       }
 
       h1 {
-        font-size: 1.875rem;
+        font-size: 4rem;
         font-weight: 700;
-        color: #111827;
-        margin-bottom: 1.5rem;
+        color: #ffffff;
+        margin-bottom: 2rem;
+        line-height: 1.1;
       }
 
-      .updated {
-        font-size: 0.875rem;
-        color: #6b7280;
-        margin-bottom: 2rem;
+      .intro {
+        font-size: 1.125rem;
+        color: #d1d5db;
+        margin-bottom: 3rem;
+        line-height: 1.7;
       }
 
       section {
-        margin-bottom: 2rem;
+        margin-bottom: 3rem;
       }
 
       h2 {
-        font-size: 1.25rem;
+        font-size: 2rem;
+        font-weight: 700;
+        color: #ffffff;
+        margin-bottom: 1.5rem;
+      }
+
+      h3 {
+        font-size: 1.5rem;
         font-weight: 600;
-        color: #111827;
-        margin-bottom: 0.75rem;
+        color: #ffffff;
+        margin-bottom: 1rem;
+        margin-top: 2rem;
       }
 
       p {
-        margin-bottom: 0.75rem;
+        margin-bottom: 1.25rem;
+        color: #d1d5db;
+        font-size: 1.05rem;
+        line-height: 1.7;
       }
 
       ul {
-        list-style-type: disc;
-        padding-left: 1.5rem;
-        margin-bottom: 0.75rem;
+        list-style: none;
+        padding-left: 0;
+        margin-bottom: 1.25rem;
       }
 
       li {
-        margin-bottom: 0.5rem;
+        margin-bottom: 0.75rem;
+        padding-left: 1.5rem;
+        position: relative;
+        color: #d1d5db;
+        font-size: 1.05rem;
+        line-height: 1.7;
+      }
+
+      li::before {
+        content: "•";
+        position: absolute;
+        left: 0;
+        color: #8b5cf6;
+        font-weight: bold;
+        font-size: 1.2rem;
       }
 
       strong {
         font-weight: 600;
-        color: #111827;
+        color: #ffffff;
       }
 
-      @media (max-width: 640px) {
-        .container {
-          padding: 1.5rem 1rem;
+      .contact-info {
+        background-color: #1a1a1a;
+        border: 1px solid #2a2a2a;
+        border-radius: 12px;
+        padding: 1.5rem;
+        margin-top: 1.5rem;
+      }
+
+      .contact-info p {
+        margin-bottom: 0.75rem;
+      }
+
+      .contact-info p:last-child {
+        margin-bottom: 0;
+      }
+
+      a {
+        color: #a78bfa;
+        text-decoration: none;
+        transition: color 0.2s;
+      }
+
+      a:hover {
+        color: #8b5cf6;
+      }
+
+      @media (max-width: 768px) {
+        header {
+          padding: 1rem;
         }
 
-        .card {
-          padding: 1.5rem;
+        .container {
+          padding: 2rem 1.5rem;
         }
 
         h1 {
+          font-size: 2.5rem;
+        }
+
+        h2 {
           font-size: 1.5rem;
+        }
+
+        h3 {
+          font-size: 1.25rem;
+        }
+
+        .intro,
+        p,
+        li {
+          font-size: 1rem;
+        }
+
+        .nav-buttons {
+          gap: 0.5rem;
+        }
+
+        .btn {
+          padding: 0.5rem 1rem;
+          font-size: 0.875rem;
         }
       }
     </style>
   </head>
   <body>
+    <header>
+      <nav>
+        <a href="https://postiz.kingofautomation.com" class="logo">
+          <div class="logo-icon">P</div>
+          postiz
+        </a>
+        <div class="nav-buttons">
+          <a
+            href="https://postiz.kingofautomation.com/auth/login"
+            class="btn btn-login"
+            >Log In</a
+          >
+          <a
+            href="https://postiz.kingofautomation.com/auth"
+            class="btn btn-signup"
+            >Get Started »</a
+          >
+        </div>
+      </nav>
+    </header>
+
     <div class="container">
-      <div class="card">
-        <h1>Terms of Service</h1>
-        <p class="updated">Last updated: <span id="date"></span></p>
+      <h1>Terms of Service</h1>
 
-        <section>
-          <h2>1. Acceptance of Terms</h2>
+      <p class="intro">
+        By accessing and using Postiz ("the Service"), you accept and agree to
+        be bound by the terms and provisions of this agreement. If you do not
+        agree to these Terms of Service, please do not use the Service.
+      </p>
+
+      <section>
+        <h2>1. Acceptance of Terms</h2>
+        <p>
+          By accessing and using Postiz, you accept and agree to be bound by the
+          terms and provisions of this agreement. If you do not agree to these
+          Terms of Service, please do not use the Service.
+        </p>
+      </section>
+
+      <section>
+        <h2>2. Description of Service</h2>
+        <p>
+          Postiz is a social media management platform that allows users to
+          schedule, publish, and manage content across multiple social media
+          platforms including TikTok, Meta/Facebook, Instagram, Twitter,
+          LinkedIn, and others.
+        </p>
+      </section>
+
+      <section>
+        <h2>3. User Accounts</h2>
+        <p>To use our Service, you must:</p>
+        <ul>
+          <li>Be at least 13 years old (or 16 in the EU)</li>
+          <li>Provide accurate and complete registration information</li>
+          <li>Maintain the security of your account credentials</li>
+          <li>
+            Be responsible for all activities that occur under your account
+          </li>
+          <li>Notify us immediately of any unauthorized use</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>4. User Content and Conduct</h2>
+        <p>
+          You are responsible for the content you post through our Service. You
+          agree not to:
+        </p>
+        <ul>
+          <li>Post content that violates any law or third-party rights</li>
+          <li>Post spam, misleading, or fraudulent content</li>
+          <li>
+            Post content that is harmful, threatening, abusive, or harassing
+          </li>
+          <li>
+            Violate the terms of service of any connected social media platform
+          </li>
+          <li>Use the Service to infringe on intellectual property rights</li>
+          <li>Attempt to gain unauthorized access to our systems</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>5. Social Media Platform Integration</h2>
+        <p>
+          When you connect your social media accounts to our Service, you grant
+          us permission to access and post content on your behalf. You
+          acknowledge that:
+        </p>
+        <ul>
+          <li>You must comply with each platform's terms of service</li>
+          <li>
+            We are not responsible for actions taken by third-party platforms
+          </li>
+          <li>Platform APIs and features may change without notice</li>
+          <li>
+            You can revoke access at any time through your account settings
+          </li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>6. Intellectual Property</h2>
+        <p>
+          The Service and its original content, features, and functionality are
+          owned by Postiz and are protected by international copyright,
+          trademark, and other intellectual property laws. You retain all rights
+          to the content you post through the Service.
+        </p>
+      </section>
+
+      <section>
+        <h2>7. Limitation of Liability</h2>
+        <p>
+          To the maximum extent permitted by law, Postiz shall not be liable for
+          any indirect, incidental, special, consequential, or punitive damages
+          resulting from your use of or inability to use the Service.
+        </p>
+      </section>
+
+      <section>
+        <h2>8. Service Availability</h2>
+        <p>
+          We strive to provide reliable service but do not guarantee
+          uninterrupted access. We may modify, suspend, or discontinue the
+          Service at any time without notice.
+        </p>
+      </section>
+
+      <section>
+        <h2>9. Termination</h2>
+        <p>
+          We may terminate or suspend your account and access to the Service
+          immediately, without prior notice, for conduct that we believe
+          violates these Terms or is harmful to other users, us, or third
+          parties.
+        </p>
+      </section>
+
+      <section>
+        <h2>10. Changes to Terms</h2>
+        <p>
+          We reserve the right to modify these Terms at any time. We will notify
+          users of any material changes by posting the new Terms on this page
+          and updating the "Last updated" date.
+        </p>
+      </section>
+
+      <section>
+        <h2>11. Governing Law</h2>
+        <p>
+          These Terms shall be governed by and construed in accordance with
+          applicable laws, without regard to conflict of law provisions.
+        </p>
+      </section>
+
+      <section>
+        <h2>12. Contact Information</h2>
+        <p>If you have any questions about these Terms, please contact us:</p>
+        <div class="contact-info">
           <p>
-            By accessing and using Postiz ("the Service"), you accept and agree
-            to be bound by the terms and provisions of this agreement. If you do
-            not agree to these Terms of Service, please do not use the Service.
+            <strong>Email:</strong>
+            <a href="mailto:privacy@kingofautomation.com"
+              >privacy@kingofautomation.com</a
+            >
           </p>
-        </section>
-
-        <section>
-          <h2>2. Description of Service</h2>
           <p>
-            Postiz is a social media management platform that allows users to
-            schedule, publish, and manage content across multiple social media
-            platforms including TikTok, Meta/Facebook, Instagram, Twitter,
-            LinkedIn, and others.
+            <strong>Website:</strong>
+            <a href="https://postiz.kingofautomation.com"
+              >postiz.kingofautomation.com</a
+            >
           </p>
-        </section>
-
-        <section>
-          <h2>3. User Accounts</h2>
-          <p>To use our Service, you must:</p>
-          <ul>
-            <li>Be at least 13 years old (or 16 in the EU)</li>
-            <li>Provide accurate and complete registration information</li>
-            <li>Maintain the security of your account credentials</li>
-            <li>
-              Be responsible for all activities that occur under your account
-            </li>
-            <li>Notify us immediately of any unauthorized use</li>
-          </ul>
-        </section>
-
-        <section>
-          <h2>4. User Content and Conduct</h2>
-          <p>
-            You are responsible for the content you post through our Service.
-            You agree not to:
-          </p>
-          <ul>
-            <li>Post content that violates any law or third-party rights</li>
-            <li>Post spam, misleading, or fraudulent content</li>
-            <li>
-              Post content that is harmful, threatening, abusive, or harassing
-            </li>
-            <li>
-              Violate the terms of service of any connected social media
-              platform
-            </li>
-            <li>Use the Service to infringe on intellectual property rights</li>
-            <li>Attempt to gain unauthorized access to our systems</li>
-          </ul>
-        </section>
-
-        <section>
-          <h2>5. Social Media Platform Integration</h2>
-          <p>
-            When you connect your social media accounts to our Service, you
-            grant us permission to access and post content on your behalf. You
-            acknowledge that:
-          </p>
-          <ul>
-            <li>You must comply with each platform's terms of service</li>
-            <li>
-              We are not responsible for actions taken by third-party platforms
-            </li>
-            <li>Platform APIs and features may change without notice</li>
-            <li>
-              You can revoke access at any time through your account settings
-            </li>
-          </ul>
-        </section>
-
-        <section>
-          <h2>6. Intellectual Property</h2>
-          <p>
-            The Service and its original content, features, and functionality
-            are owned by Postiz and are protected by international copyright,
-            trademark, and other intellectual property laws. You retain all
-            rights to the content you post through the Service.
-          </p>
-        </section>
-
-        <section>
-          <h2>7. Limitation of Liability</h2>
-          <p>
-            To the maximum extent permitted by law, Postiz shall not be liable
-            for any indirect, incidental, special, consequential, or punitive
-            damages resulting from your use of or inability to use the Service.
-          </p>
-        </section>
-
-        <section>
-          <h2>8. Service Availability</h2>
-          <p>
-            We strive to provide reliable service but do not guarantee
-            uninterrupted access. We may modify, suspend, or discontinue the
-            Service at any time without notice.
-          </p>
-        </section>
-
-        <section>
-          <h2>9. Termination</h2>
-          <p>
-            We may terminate or suspend your account and access to the Service
-            immediately, without prior notice, for conduct that we believe
-            violates these Terms or is harmful to other users, us, or third
-            parties.
-          </p>
-        </section>
-
-        <section>
-          <h2>10. Changes to Terms</h2>
-          <p>
-            We reserve the right to modify these Terms at any time. We will
-            notify users of any material changes by posting the new Terms on
-            this page and updating the "Last updated" date.
-          </p>
-        </section>
-
-        <section>
-          <h2>11. Governing Law</h2>
-          <p>
-            These Terms shall be governed by and construed in accordance with
-            the laws of [Your Jurisdiction], without regard to its conflict of
-            law provisions.
-          </p>
-        </section>
-
-        <section>
-          <h2>12. Contact Information</h2>
-          <p>
-            If you have any questions about these Terms, please contact us at:
-          </p>
-          <p style="margin-top: 0.5rem">
-            Email: legal@kingofautomation.com<br />
-            Address: [Your Business Address]
-          </p>
-        </section>
-      </div>
+        </div>
+      </section>
     </div>
-
-    <script>
-      document.getElementById("date").textContent =
-        new Date().toLocaleDateString("en-US", {
-          year: "numeric",
-          month: "long",
-          day: "numeric",
-        });
-    </script>
   </body>
 </html>
