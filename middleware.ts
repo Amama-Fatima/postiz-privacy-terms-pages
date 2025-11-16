@@ -22,8 +22,17 @@ export async function middleware(request: NextRequest) {
     return NextResponse.redirect(new URL("/privacy", request.url), 301);
   }
 
-  // For static HTML files themselves, let Next.js serve them
-  if (path.endsWith(".html")) {
+  // For static HTML files and images, let Next.js serve them
+  if (
+    path.endsWith(".html") ||
+    path.endsWith(".png") ||
+    path.endsWith(".jpg") ||
+    path.endsWith(".jpeg") ||
+    path.endsWith(".svg") ||
+    path.endsWith(".ico") ||
+    path.endsWith(".gif") ||
+    path.endsWith(".webp")
+  ) {
     return NextResponse.next();
   }
 
