@@ -22,16 +22,16 @@ export async function middleware(request: NextRequest) {
     return NextResponse.redirect(new URL("/privacy", request.url), 301);
   }
 
-  // For static HTML files and specific images (only our branding assets)
-  if (path.endsWith(".html")) {
-    return NextResponse.next();
-  }
-
-  // Only serve images that are specifically for our privacy/terms pages
+  // For static HTML files and images, let Next.js serve them
   if (
-    path === "/king-of-automation.png" ||
-    path === "/favicon.ico" ||
-    path.startsWith("/king-of-automation") // Catches king-of-automation.svg, king-of-automation-logo.png, etc.
+    path.endsWith(".html") ||
+    path.endsWith(".png") ||
+    path.endsWith(".jpg") ||
+    path.endsWith(".jpeg") ||
+    path.endsWith(".svg") ||
+    path.endsWith(".ico") ||
+    path.endsWith(".gif") ||
+    path.endsWith(".webp")
   ) {
     return NextResponse.next();
   }
