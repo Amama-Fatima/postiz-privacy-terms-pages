@@ -47,23 +47,16 @@
       .logo {
         display: flex;
         align-items: center;
-        gap: 0.5rem;
+        gap: 0.75rem;
         font-size: 1.5rem;
         font-weight: 700;
         color: #ffffff;
         text-decoration: none;
       }
 
-      .logo-icon {
-        width: 32px;
-        height: 32px;
-        background: linear-gradient(135deg, #8b5cf6 0%, #a78bfa 100%);
-        border-radius: 6px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        font-weight: 700;
-        font-size: 1.2rem;
+      .logo-img {
+        height: 40px;
+        width: auto;
       }
 
       .nav-buttons {
@@ -240,6 +233,10 @@
           padding: 0.5rem 1rem;
           font-size: 0.875rem;
         }
+
+        .logo-img {
+          height: 32px;
+        }
       }
     </style>
   </head>
@@ -247,8 +244,12 @@
     <header>
       <nav>
         <a href="https://postiz.kingofautomation.com" class="logo">
-          <div class="logo-icon">P</div>
-          postiz
+          <img
+            src="/king-of-automation.png"
+            alt="King of Automation"
+            class="logo-img"
+          />
+          <span>King of Automation</span>
         </a>
         <div class="nav-buttons">
           <a
