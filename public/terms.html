@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Terms of Service - Postiz</title>
+    <title>Terms of Service - King of Automation</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -100,6 +100,17 @@
         max-width: 900px;
         margin: 0 auto;
         padding: 4rem 2rem;
+      }
+
+      .last-updated {
+        display: inline-block;
+        background-color: #1a1a1a;
+        border: 1px solid #2a2a2a;
+        padding: 0.5rem 1rem;
+        border-radius: 20px;
+        font-size: 0.9rem;
+        color: #9ca3af;
+        margin-bottom: 2rem;
       }
 
       h1 {
@@ -267,29 +278,31 @@
     </header>
 
     <div class="container">
+      <span class="last-updated">Last updated: <span id="date"></span></span>
       <h1>Terms of Service</h1>
 
       <p class="intro">
-        By accessing and using Postiz ("the Service"), you accept and agree to
-        be bound by the terms and provisions of this agreement. If you do not
-        agree to these Terms of Service, please do not use the Service.
+        By accessing and using King of Automation ("the Service"), you accept
+        and agree to be bound by the terms and provisions of this agreement. If
+        you do not agree to these Terms of Service, please do not use the
+        Service.
       </p>
 
       <section>
         <h2>1. Acceptance of Terms</h2>
         <p>
-          By accessing and using Postiz, you accept and agree to be bound by the
-          terms and provisions of this agreement. If you do not agree to these
-          Terms of Service, please do not use the Service.
+          By accessing and using King of Automation, you accept and agree to be
+          bound by the terms and provisions of this agreement. If you do not
+          agree to these Terms of Service, please do not use the Service.
         </p>
       </section>
 
       <section>
         <h2>2. Description of Service</h2>
         <p>
-          Postiz is a social media management platform that allows users to
-          schedule, publish, and manage content across multiple social media
-          platforms including TikTok, Meta/Facebook, Instagram, Twitter,
+          King of Automation is a social media management platform that allows
+          users to schedule, publish, and manage content across multiple social
+          media platforms including TikTok, Meta/Facebook, Instagram, Twitter,
           LinkedIn, and others.
         </p>
       </section>
@@ -351,18 +364,19 @@
         <h2>6. Intellectual Property</h2>
         <p>
           The Service and its original content, features, and functionality are
-          owned by Postiz and are protected by international copyright,
-          trademark, and other intellectual property laws. You retain all rights
-          to the content you post through the Service.
+          owned by King of Automation and are protected by international
+          copyright, trademark, and other intellectual property laws. You retain
+          all rights to the content you post through the Service.
         </p>
       </section>
 
       <section>
         <h2>7. Limitation of Liability</h2>
         <p>
-          To the maximum extent permitted by law, Postiz shall not be liable for
-          any indirect, incidental, special, consequential, or punitive damages
-          resulting from your use of or inability to use the Service.
+          To the maximum extent permitted by law, King of Automation shall not
+          be liable for any indirect, incidental, special, consequential, or
+          punitive damages resulting from your use of or inability to use the
+          Service.
         </p>
       </section>
 
@@ -421,5 +435,14 @@
         </div>
       </section>
     </div>
+
+    <script>
+      document.getElementById("date").textContent =
+        new Date().toLocaleDateString("en-US", {
+          year: "numeric",
+          month: "long",
+          day: "numeric",
+        });
+    </script>
   </body>
 </html>
