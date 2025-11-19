@@ -1,0 +1,63 @@
+OWfac3GKMdiCURFaSM8VnCaVyk7Dn4-wUZqXJSaS
+
+Manage account
+
+Account API tokens
+Manage account API tokens. User API tokens are found in the 'My Profile' section.
+
+
+Not all APIs are guaranteed to support usage of Account API Tokens. Supported APIs are listed in the developer documentation.
+Edit Cloudflare Workers API token was successfully created
+Copy this token to access the Cloudflare API. For security this will not be shown again. Learn more
+
+
+OWfac3GKMdiCURFaSM8VnCaVyk7Dn4-wUZqXJSaS
+Test this token
+To confirm your token is working correctly, copy and paste the below CURL command in a terminal shell to test.
+
+
+curl "https://api.cloudflare.com/client/v4/accounts/76348c19524052ddea5bded9a30903b9/tokens/verify" \
+-H "Authorization: Bearer OWfac3GKMdiCURFaSM8VnCaVyk7Dn4-wUZqXJSaS"
+View all API tokens
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Create User API Token
+Postiz R2 Access was successfully created
+Summary:
+Permissions:
+Allows the ability to create, list, and delete buckets, edit bucket configuration, read, write, and list objects, and read and write access to data catalog tables and associated metadata.
+
+Buckets:
+All R2 buckets on this account
+Use this token for authenticating against the Cloudflare API:
+Token value
+AWZtVmvbYYh_PbQbgb_M8a4xR-mSGci1yvBp3pgB
+Click to copy
+
+Use the following credentials for S3 clients:
+Access Key ID
+36f013609537f814da7d2ed0a1d03b9c
+Click to copy
+
+Secret Access Key
+a0d9ed041bf519d5a666ebffaba64b9cbbf4c18c69861a2bd3e7c497a8d4418b
+Click to copy
+
+Use jurisdiction-specific endpoints for S3 clients:
+DefaultEuropean Union (EU)
+https://76348c19524052ddea5bded9a30903b9.r2.cloudflarestorage.com
+Click to copy
+For security reasons, these token values will not be shown again. Learn more about API token generation

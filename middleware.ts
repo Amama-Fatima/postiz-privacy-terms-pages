@@ -23,7 +23,11 @@ export async function middleware(request: NextRequest) {
   }
 
   // For static HTML files and images, let Next.js serve them
-  if (path.endsWith(".html") || path.endsWith("king-of-automation.png")) {
+  if (
+    path.endsWith(".html") ||
+    path.endsWith("king-of-automation.png") ||
+    path.endsWith(".txt")
+  ) {
     return NextResponse.next();
   }
 
