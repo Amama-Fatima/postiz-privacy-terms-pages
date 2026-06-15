@@ -4,445 +4,681 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Terms of Service - King of Automation</title>
+    <meta
+      name="description"
+      content="Terms of Service for King of Automation, a social media scheduling and automation service."
+    />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;1,500;1,600&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
       rel="stylesheet"
     />
     <style>
       * {
+        box-sizing: border-box;
         margin: 0;
         padding: 0;
-        box-sizing: border-box;
+      }
+
+      :root {
+        --bg: #070707;
+        --panel: #111111;
+        --panel-strong: #181818;
+        --line: #2d2d2d;
+        --text: #f7f7f7;
+        --muted: #b8bec8;
+        --soft: #838b98;
+        --accent: #35c8ff;
+        --accent-2: #1677d2;
+        --danger: #ff8f8f;
+      }
+
+      html {
+        scroll-behavior: smooth;
       }
 
       body {
-        font-family: "Plus Jakarta Sans", -apple-system, BlinkMacSystemFont,
-          "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-        line-height: 1.6;
-        color: #ffffff;
-        background-color: #000000;
         min-height: 100vh;
-      }
-
-      /* Header */
-      header {
-        background-color: #1a1a1a;
-        border-bottom: 1px solid #2a2a2a;
-        padding: 1rem 2rem;
-        position: sticky;
-        top: 0;
-        z-index: 100;
-      }
-
-      nav {
-        max-width: 1400px;
-        margin: 0 auto;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-      }
-
-      .logo {
-        display: flex;
-        align-items: center;
-        gap: 0.75rem;
-        font-size: 1.5rem;
-        font-weight: 700;
-        color: #ffffff;
-        text-decoration: none;
-      }
-
-      .logo-img {
-        height: 40px;
-        width: auto;
-      }
-
-      .nav-buttons {
-        display: flex;
-        gap: 1rem;
-        align-items: center;
-      }
-
-      .btn {
-        padding: 0.625rem 1.5rem;
-        border-radius: 50px;
-        text-decoration: none;
-        font-weight: 500;
-        font-size: 0.95rem;
-        transition: all 0.2s;
-        border: 1px solid transparent;
-        display: inline-block;
-      }
-
-      .btn-login {
-        color: #ffffff;
-        border-color: #3a3a3a;
-      }
-
-      .btn-login:hover {
-        border-color: #8b5cf6;
-      }
-
-      .btn-signup {
-        background-color: #ffffff;
-        color: #000000;
-        font-weight: 600;
-      }
-
-      .btn-signup:hover {
-        background-color: #f0f0f0;
-      }
-
-      /* Main Content */
-      .container {
-        max-width: 900px;
-        margin: 0 auto;
-        padding: 4rem 2rem;
-      }
-
-      .last-updated {
-        display: inline-block;
-        background-color: #1a1a1a;
-        border: 1px solid #2a2a2a;
-        padding: 0.5rem 1rem;
-        border-radius: 20px;
-        font-size: 0.9rem;
-        color: #9ca3af;
-        margin-bottom: 2rem;
-      }
-
-      h1 {
-        font-size: 4rem;
-        font-weight: 700;
-        color: #ffffff;
-        margin-bottom: 2rem;
-        line-height: 1.1;
-      }
-
-      .intro {
-        font-size: 1.125rem;
-        color: #d1d5db;
-        margin-bottom: 3rem;
+        background:
+          radial-gradient(circle at top right, rgba(53, 200, 255, 0.16), transparent 33rem),
+          linear-gradient(180deg, #050505 0%, var(--bg) 42%, #0b0b0b 100%);
+        color: var(--text);
+        font-family: "Plus Jakarta Sans", -apple-system, BlinkMacSystemFont, "Segoe UI",
+          sans-serif;
         line-height: 1.7;
-      }
-
-      section {
-        margin-bottom: 3rem;
-      }
-
-      h2 {
-        font-size: 2rem;
-        font-weight: 700;
-        color: #ffffff;
-        margin-bottom: 1.5rem;
-      }
-
-      h3 {
-        font-size: 1.5rem;
-        font-weight: 600;
-        color: #ffffff;
-        margin-bottom: 1rem;
-        margin-top: 2rem;
-      }
-
-      p {
-        margin-bottom: 1.25rem;
-        color: #d1d5db;
-        font-size: 1.05rem;
-        line-height: 1.7;
-      }
-
-      ul {
-        list-style: none;
-        padding-left: 0;
-        margin-bottom: 1.25rem;
-      }
-
-      li {
-        margin-bottom: 0.75rem;
-        padding-left: 1.5rem;
-        position: relative;
-        color: #d1d5db;
-        font-size: 1.05rem;
-        line-height: 1.7;
-      }
-
-      li::before {
-        content: "•";
-        position: absolute;
-        left: 0;
-        color: #8b5cf6;
-        font-weight: bold;
-        font-size: 1.2rem;
-      }
-
-      strong {
-        font-weight: 600;
-        color: #ffffff;
-      }
-
-      .contact-info {
-        background-color: #1a1a1a;
-        border: 1px solid #2a2a2a;
-        border-radius: 12px;
-        padding: 1.5rem;
-        margin-top: 1.5rem;
-      }
-
-      .contact-info p {
-        margin-bottom: 0.75rem;
-      }
-
-      .contact-info p:last-child {
-        margin-bottom: 0;
       }
 
       a {
-        color: #a78bfa;
+        color: var(--accent);
         text-decoration: none;
-        transition: color 0.2s;
       }
 
       a:hover {
-        color: #8b5cf6;
+        color: #7fddff;
       }
 
-      @media (max-width: 768px) {
-        header {
-          padding: 1rem;
+      header {
+        position: sticky;
+        top: 0;
+        z-index: 20;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+        background: rgba(7, 7, 7, 0.86);
+        backdrop-filter: blur(16px);
+      }
+
+      nav {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 1.5rem;
+        width: min(1160px, calc(100% - 2rem));
+        margin: 0 auto;
+        padding: 0.9rem 0;
+      }
+
+      .logo {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.75rem;
+        color: var(--text);
+        font-weight: 800;
+        letter-spacing: 0;
+      }
+
+      .logo img {
+        width: 42px;
+        height: 42px;
+        object-fit: contain;
+      }
+
+      .nav-actions {
+        display: flex;
+        align-items: center;
+        gap: 0.75rem;
+      }
+
+      .button {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 42px;
+        border-radius: 6px;
+        border: 1px solid var(--line);
+        padding: 0.65rem 1rem;
+        color: var(--text);
+        font-size: 0.92rem;
+        font-weight: 700;
+        transition: border-color 0.2s ease, background 0.2s ease, color 0.2s ease;
+      }
+
+      .button:hover {
+        border-color: rgba(53, 200, 255, 0.68);
+        color: var(--text);
+      }
+
+      .button.primary {
+        border-color: var(--accent);
+        background: var(--accent);
+        color: #03111a;
+      }
+
+      main {
+        width: min(1160px, calc(100% - 2rem));
+        margin: 0 auto;
+        padding: 4.5rem 0 5rem;
+      }
+
+      .hero {
+        display: grid;
+        grid-template-columns: minmax(0, 1.1fr) minmax(280px, 0.55fr);
+        gap: 3rem;
+        align-items: end;
+        padding-bottom: 3rem;
+        border-bottom: 1px solid var(--line);
+      }
+
+      .eyebrow {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+        margin-bottom: 1.25rem;
+        color: var(--accent);
+        font-size: 0.82rem;
+        font-weight: 800;
+        text-transform: uppercase;
+      }
+
+      .eyebrow::before {
+        content: "";
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+        background: var(--accent);
+      }
+
+      h1 {
+        max-width: 800px;
+        margin-bottom: 1.35rem;
+        color: var(--text);
+        font-size: clamp(2.75rem, 6vw, 5.8rem);
+        font-weight: 800;
+        letter-spacing: 0;
+        line-height: 0.98;
+      }
+
+      .intro {
+        max-width: 760px;
+        color: #d8dde5;
+        font-size: 1.12rem;
+      }
+
+      .summary {
+        border: 1px solid var(--line);
+        border-radius: 8px;
+        background: rgba(17, 17, 17, 0.78);
+        padding: 1.25rem;
+      }
+
+      .summary h2 {
+        margin-bottom: 1rem;
+        font-size: 1rem;
+        text-transform: uppercase;
+        color: var(--soft);
+      }
+
+      .summary dl {
+        display: grid;
+        gap: 0.9rem;
+      }
+
+      .summary dt {
+        color: var(--soft);
+        font-size: 0.82rem;
+        font-weight: 700;
+        text-transform: uppercase;
+      }
+
+      .summary dd {
+        color: var(--text);
+        font-weight: 700;
+      }
+
+      .content {
+        display: grid;
+        grid-template-columns: 260px minmax(0, 1fr);
+        gap: 3rem;
+        align-items: start;
+        padding-top: 3rem;
+      }
+
+      .toc {
+        position: sticky;
+        top: 5.5rem;
+        border-left: 1px solid var(--line);
+        padding-left: 1rem;
+      }
+
+      .toc p {
+        margin-bottom: 0.85rem;
+        color: var(--soft);
+        font-size: 0.82rem;
+        font-weight: 800;
+        text-transform: uppercase;
+      }
+
+      .toc a {
+        display: block;
+        padding: 0.35rem 0;
+        color: var(--muted);
+        font-size: 0.95rem;
+      }
+
+      .toc a:hover {
+        color: var(--accent);
+      }
+
+      article {
+        min-width: 0;
+      }
+
+      section {
+        padding: 2rem 0;
+        border-bottom: 1px solid var(--line);
+      }
+
+      section:first-child {
+        padding-top: 0;
+      }
+
+      h2 {
+        margin-bottom: 1rem;
+        color: var(--text);
+        font-size: clamp(1.55rem, 3vw, 2.25rem);
+        line-height: 1.2;
+      }
+
+      h3 {
+        margin: 1.35rem 0 0.65rem;
+        color: #ffffff;
+        font-size: 1.1rem;
+      }
+
+      p {
+        margin-bottom: 1rem;
+        color: var(--muted);
+        font-size: 1rem;
+      }
+
+      ul {
+        display: grid;
+        gap: 0.7rem;
+        margin: 1rem 0;
+        padding-left: 1.25rem;
+      }
+
+      li {
+        color: var(--muted);
+        padding-left: 0.25rem;
+      }
+
+      li::marker {
+        color: var(--accent);
+      }
+
+      strong {
+        color: #ffffff;
+        font-weight: 700;
+      }
+
+      .notice {
+        border: 1px solid rgba(255, 143, 143, 0.38);
+        border-radius: 8px;
+        background: rgba(255, 143, 143, 0.08);
+        padding: 1rem;
+      }
+
+      .notice p {
+        margin: 0;
+        color: #ffd3d3;
+      }
+
+      .contact-box {
+        display: grid;
+        gap: 0.8rem;
+        margin-top: 1.25rem;
+        border: 1px solid var(--line);
+        border-radius: 8px;
+        background: var(--panel);
+        padding: 1.25rem;
+      }
+
+      .contact-box p {
+        margin: 0;
+      }
+
+      footer {
+        width: min(1160px, calc(100% - 2rem));
+        margin: 0 auto;
+        border-top: 1px solid var(--line);
+        padding: 1.5rem 0 2.25rem;
+        color: var(--soft);
+        font-size: 0.9rem;
+      }
+
+      @media (max-width: 860px) {
+        nav {
+          align-items: flex-start;
+          flex-direction: column;
         }
 
-        .container {
-          padding: 2rem 1.5rem;
+        .nav-actions {
+          width: 100%;
         }
 
-        h1 {
-          font-size: 2.5rem;
+        .button {
+          flex: 1;
         }
 
-        h2 {
-          font-size: 1.5rem;
+        main {
+          padding-top: 2.75rem;
         }
 
-        h3 {
-          font-size: 1.25rem;
+        .hero,
+        .content {
+          grid-template-columns: 1fr;
+          gap: 2rem;
         }
 
-        .intro,
-        p,
-        li {
-          font-size: 1rem;
+        .toc {
+          position: static;
+          border-left: 0;
+          border-top: 1px solid var(--line);
+          padding: 1rem 0 0;
+        }
+      }
+
+      @media (max-width: 560px) {
+        .logo span {
+          font-size: 0.95rem;
         }
 
-        .nav-buttons {
-          gap: 0.5rem;
+        .logo img {
+          width: 34px;
+          height: 34px;
         }
 
-        .btn {
-          padding: 0.5rem 1rem;
-          font-size: 0.875rem;
+        .nav-actions {
+          flex-direction: column;
         }
 
-        .logo-img {
-          height: 32px;
+        .button {
+          width: 100%;
         }
       }
     </style>
   </head>
   <body>
     <header>
-      <nav>
+      <nav aria-label="Primary navigation">
         <a href="https://postiz.kingofautomation.com" class="logo">
-          <img
-            src="king-of-automation.png"
-            alt="King of Automation"
-            class="logo-img"
-          />
+          <img src="king-of-automation.png" alt="King of Automation" />
           <span>King of Automation</span>
         </a>
-        <div class="nav-buttons">
-          <a
-            href="https://postiz.kingofautomation.com/auth/login"
-            class="btn btn-login"
-            >Log In</a
-          >
-          <a
-            href="https://postiz.kingofautomation.com/auth"
-            class="btn btn-signup"
-            >Get Started »</a
-          >
+        <div class="nav-actions">
+          <a href="https://postiz.kingofautomation.com/auth/login" class="button">Log In</a>
+          <a href="https://postiz.kingofautomation.com/auth" class="button primary">Get Started</a>
         </div>
       </nav>
     </header>
 
-    <div class="container">
-      <span class="last-updated">Last updated: <span id="date"></span></span>
-      <h1>Terms of Service</h1>
-
-      <p class="intro">
-        By accessing and using King of Automation ("the Service"), you accept
-        and agree to be bound by the terms and provisions of this agreement. If
-        you do not agree to these Terms of Service, please do not use the
-        Service.
-      </p>
-
-      <section>
-        <h2>1. Acceptance of Terms</h2>
-        <p>
-          By accessing and using King of Automation, you accept and agree to be
-          bound by the terms and provisions of this agreement. If you do not
-          agree to these Terms of Service, please do not use the Service.
-        </p>
-      </section>
-
-      <section>
-        <h2>2. Description of Service</h2>
-        <p>
-          King of Automation is a social media management platform that allows
-          users to schedule, publish, and manage content across multiple social
-          media platforms including TikTok, Meta/Facebook, Instagram, Twitter,
-          LinkedIn, and others.
-        </p>
-      </section>
-
-      <section>
-        <h2>3. User Accounts</h2>
-        <p>To use our Service, you must:</p>
-        <ul>
-          <li>Be at least 13 years old (or 16 in the EU)</li>
-          <li>Provide accurate and complete registration information</li>
-          <li>Maintain the security of your account credentials</li>
-          <li>
-            Be responsible for all activities that occur under your account
-          </li>
-          <li>Notify us immediately of any unauthorized use</li>
-        </ul>
-      </section>
-
-      <section>
-        <h2>4. User Content and Conduct</h2>
-        <p>
-          You are responsible for the content you post through our Service. You
-          agree not to:
-        </p>
-        <ul>
-          <li>Post content that violates any law or third-party rights</li>
-          <li>Post spam, misleading, or fraudulent content</li>
-          <li>
-            Post content that is harmful, threatening, abusive, or harassing
-          </li>
-          <li>
-            Violate the terms of service of any connected social media platform
-          </li>
-          <li>Use the Service to infringe on intellectual property rights</li>
-          <li>Attempt to gain unauthorized access to our systems</li>
-        </ul>
-      </section>
-
-      <section>
-        <h2>5. Social Media Platform Integration</h2>
-        <p>
-          When you connect your social media accounts to our Service, you grant
-          us permission to access and post content on your behalf. You
-          acknowledge that:
-        </p>
-        <ul>
-          <li>You must comply with each platform's terms of service</li>
-          <li>
-            We are not responsible for actions taken by third-party platforms
-          </li>
-          <li>Platform APIs and features may change without notice</li>
-          <li>
-            You can revoke access at any time through your account settings
-          </li>
-        </ul>
-      </section>
-
-      <section>
-        <h2>6. Intellectual Property</h2>
-        <p>
-          The Service and its original content, features, and functionality are
-          owned by King of Automation and are protected by international
-          copyright, trademark, and other intellectual property laws. You retain
-          all rights to the content you post through the Service.
-        </p>
-      </section>
-
-      <section>
-        <h2>7. Limitation of Liability</h2>
-        <p>
-          To the maximum extent permitted by law, King of Automation shall not
-          be liable for any indirect, incidental, special, consequential, or
-          punitive damages resulting from your use of or inability to use the
-          Service.
-        </p>
-      </section>
-
-      <section>
-        <h2>8. Service Availability</h2>
-        <p>
-          We strive to provide reliable service but do not guarantee
-          uninterrupted access. We may modify, suspend, or discontinue the
-          Service at any time without notice.
-        </p>
-      </section>
-
-      <section>
-        <h2>9. Termination</h2>
-        <p>
-          We may terminate or suspend your account and access to the Service
-          immediately, without prior notice, for conduct that we believe
-          violates these Terms or is harmful to other users, us, or third
-          parties.
-        </p>
-      </section>
-
-      <section>
-        <h2>10. Changes to Terms</h2>
-        <p>
-          We reserve the right to modify these Terms at any time. We will notify
-          users of any material changes by posting the new Terms on this page
-          and updating the "Last updated" date.
-        </p>
-      </section>
-
-      <section>
-        <h2>11. Governing Law</h2>
-        <p>
-          These Terms shall be governed by and construed in accordance with
-          applicable laws, without regard to conflict of law provisions.
-        </p>
-      </section>
-
-      <section>
-        <h2>12. Contact Information</h2>
-        <p>If you have any questions about these Terms, please contact us:</p>
-        <div class="contact-info">
-          <p>
-            <strong>Email:</strong>
-            <a href="mailto:contact@kingofautomation.com"
-              >contact@kingofautomation.com</a
-            >
-          </p>
-          <p>
-            <strong>Website:</strong>
-            <a href="https://postiz.kingofautomation.com"
-              >postiz.kingofautomation.com</a
-            >
+    <main>
+      <section class="hero" aria-labelledby="page-title">
+        <div>
+          <p class="eyebrow">Terms of Service</p>
+          <h1 id="page-title">Clear rules for using King of Automation.</h1>
+          <p class="intro">
+            These Terms govern your access to and use of King of Automation, a
+            social media scheduling and automation service. By creating an
+            account, connecting a social profile, or using the service, you agree
+            to these Terms.
           </p>
         </div>
+        <aside class="summary" aria-label="Terms summary">
+          <h2>Terms Snapshot</h2>
+          <dl>
+            <div>
+              <dt>Effective date</dt>
+              <dd>June 15, 2026</dd>
+            </div>
+            <div>
+              <dt>Service</dt>
+              <dd>Social media scheduling and automation</dd>
+            </div>
+            <div>
+              <dt>Contact</dt>
+              <dd>contact@kingofautomation.com</dd>
+            </div>
+          </dl>
+        </aside>
       </section>
-    </div>
 
-    <script>
-      document.getElementById("date").textContent =
-        new Date().toLocaleDateString("en-US", {
-          year: "numeric",
-          month: "long",
-          day: "numeric",
-        });
-    </script>
+      <div class="content">
+        <aside class="toc" aria-label="Terms sections">
+          <p>Sections</p>
+          <a href="#acceptance">Acceptance</a>
+          <a href="#service">Service</a>
+          <a href="#accounts">Accounts</a>
+          <a href="#content">Content</a>
+          <a href="#platforms">Platforms</a>
+          <a href="#prohibited">Prohibited use</a>
+          <a href="#availability">Availability</a>
+          <a href="#liability">Liability</a>
+          <a href="#contact">Contact</a>
+        </aside>
+
+        <article>
+          <section id="acceptance">
+            <h2>1. Acceptance of Terms</h2>
+            <p>
+              These Terms of Service ("Terms") are a legal agreement between you
+              and King of Automation ("King of Automation," "we," "us," or
+              "our"). If you use the service on behalf of a company, client, or
+              other organization, you confirm that you have authority to bind
+              that organization to these Terms.
+            </p>
+            <p>
+              If you do not agree to these Terms, do not create an account,
+              connect social media profiles, schedule content, or otherwise use
+              the service.
+            </p>
+          </section>
+
+          <section id="service">
+            <h2>2. The Service</h2>
+            <p>
+              King of Automation helps users plan, schedule, publish, and manage
+              social media content across supported third-party platforms. The
+              service may include calendars, drafts, media uploads, automation
+              tools, analytics, approval workflows, and account integrations.
+            </p>
+            <p>
+              Features may vary by plan, platform API availability, connected
+              account permissions, and third-party platform restrictions.
+            </p>
+          </section>
+
+          <section id="accounts">
+            <h2>3. Accounts and Authorized Users</h2>
+            <p>You agree to:</p>
+            <ul>
+              <li>provide accurate account, billing, and contact information;</li>
+              <li>keep passwords, devices, and authentication methods secure;</li>
+              <li>only connect social media accounts you own or are authorized to manage;</li>
+              <li>ensure invited workspace members have permission to act for your business or client;</li>
+              <li>notify us promptly about unauthorized account access or suspected security issues.</li>
+            </ul>
+            <p>
+              You are responsible for all activity under your account and
+              workspace, including actions taken by users you invite.
+            </p>
+          </section>
+
+          <section id="content">
+            <h2>4. Your Content</h2>
+            <p>
+              You retain ownership of the content, media, captions, drafts,
+              comments, files, and other materials you upload or create through
+              the service ("User Content").
+            </p>
+            <p>
+              You grant King of Automation a limited license to host, process,
+              store, display, transmit, publish, and otherwise use User Content
+              solely as needed to provide the service, follow your instructions,
+              troubleshoot issues, and protect the platform.
+            </p>
+            <p>
+              You are solely responsible for ensuring your User Content is
+              lawful, accurate, properly authorized, and compliant with all
+              applicable platform rules, advertising rules, intellectual property
+              rights, privacy rights, and consumer protection laws.
+            </p>
+          </section>
+
+          <section id="platforms">
+            <h2>5. Third-Party Platforms and Integrations</h2>
+            <p>
+              The service integrates with third-party platforms such as
+              Facebook, Instagram, TikTok, X/Twitter, LinkedIn, YouTube, and
+              Reddit. Those platforms are not owned or controlled by King of
+              Automation.
+            </p>
+            <ul>
+              <li>You must comply with each connected platform's terms, policies, community standards, and API rules.</li>
+              <li>Platform access may change, break, be limited, or be revoked without notice.</li>
+              <li>We are not responsible for platform outages, rejected posts, API limits, account restrictions, removals, or enforcement actions.</li>
+              <li>You can disconnect platform access through King of Automation or through the platform's own settings.</li>
+            </ul>
+            <div class="notice">
+              <p>
+                Connecting a social account gives King of Automation permission
+                to perform requested actions for that account. It does not give
+                you permission to manage accounts, brands, pages, or assets you
+                do not own or lawfully represent.
+              </p>
+            </div>
+          </section>
+
+          <section id="prohibited">
+            <h2>6. Prohibited Use</h2>
+            <p>You may not use the service to:</p>
+            <ul>
+              <li>violate laws, regulations, sanctions, or third-party rights;</li>
+              <li>post spam, scams, deceptive content, malware, phishing, or fraudulent promotions;</li>
+              <li>harass, threaten, impersonate, defame, or exploit others;</li>
+              <li>publish content you do not have the right to use;</li>
+              <li>misrepresent your identity, affiliation, services, products, or client authority;</li>
+              <li>circumvent platform limits, review systems, API restrictions, or security controls;</li>
+              <li>scrape, reverse engineer, overload, attack, or interfere with the service;</li>
+              <li>resell, sublicense, or provide managed access in a way that violates these Terms or platform rules.</li>
+            </ul>
+          </section>
+
+          <section>
+            <h2>7. Payments, Plans, and Trials</h2>
+            <p>
+              If paid plans are offered, fees, billing cycles, renewal terms,
+              taxes, refunds, and cancellation rules will be shown at purchase
+              or in the applicable order, invoice, or plan page. You authorize us
+              or our payment processor to charge the payment method you provide
+              for applicable fees.
+            </p>
+            <p>
+              Unless stated otherwise, fees are non-refundable except where
+              required by law or expressly agreed in writing.
+            </p>
+          </section>
+
+          <section id="availability">
+            <h2>8. Service Availability and Changes</h2>
+            <p>
+              We work to keep the service reliable, but we do not guarantee that
+              it will be uninterrupted, error-free, or available at all times.
+              Maintenance, outages, security incidents, platform API changes,
+              rate limits, and provider failures may affect service operation.
+            </p>
+            <p>
+              We may add, modify, suspend, or discontinue features at any time.
+              We may also restrict or suspend access if needed to protect the
+              service, comply with law, comply with platform requirements, or
+              prevent abuse.
+            </p>
+          </section>
+
+          <section>
+            <h2>9. Account Suspension and Termination</h2>
+            <p>
+              We may suspend or terminate your account if we believe you have
+              violated these Terms, created risk for King of Automation or other
+              users, failed to pay applicable fees, infringed third-party rights,
+              abused platform integrations, or used the service unlawfully.
+            </p>
+            <p>
+              You may stop using the service at any time. Termination does not
+              automatically remove content already published to third-party
+              platforms.
+            </p>
+          </section>
+
+          <section>
+            <h2>10. Intellectual Property</h2>
+            <p>
+              King of Automation and its licensors retain all rights in the
+              service, software, design, branding, documentation, and related
+              materials. These Terms do not grant you ownership of our service or
+              trademarks.
+            </p>
+            <p>
+              You may send feedback or suggestions. We may use that feedback
+              without restriction or compensation.
+            </p>
+          </section>
+
+          <section>
+            <h2>11. Privacy</h2>
+            <p>
+              Our collection and use of personal information is described in our
+              <a href="https://postiz.kingofautomation.com/privacy">Privacy Policy</a>.
+              By using the service, you acknowledge that we process information
+              as described there.
+            </p>
+          </section>
+
+          <section id="liability">
+            <h2>12. Disclaimers and Limitation of Liability</h2>
+            <p>
+              The service is provided "as is" and "as available." To the maximum
+              extent permitted by law, King of Automation disclaims warranties of
+              merchantability, fitness for a particular purpose, non-infringement,
+              and uninterrupted or error-free operation.
+            </p>
+            <p>
+              To the maximum extent permitted by law, King of Automation will not
+              be liable for indirect, incidental, special, consequential,
+              exemplary, or punitive damages, or for lost profits, lost revenue,
+              lost data, account restrictions, platform enforcement actions, or
+              business interruption arising from or related to the service.
+            </p>
+          </section>
+
+          <section>
+            <h2>13. Indemnification</h2>
+            <p>
+              You agree to defend, indemnify, and hold harmless King of
+              Automation from claims, damages, liabilities, losses, and expenses
+              arising from your User Content, your use of the service, your
+              connected accounts, your violation of these Terms, or your
+              violation of any law, platform rule, or third-party right.
+            </p>
+          </section>
+
+          <section>
+            <h2>14. Changes to These Terms</h2>
+            <p>
+              We may update these Terms from time to time. The updated version
+              will be posted on this page with a revised effective date. If a
+              change is material, we may provide additional notice through the
+              service or by email. Continued use of the service after changes
+              become effective means you accept the updated Terms.
+            </p>
+          </section>
+
+          <section>
+            <h2>15. Governing Law</h2>
+            <p>
+              These Terms are governed by the laws applicable to King of
+              Automation, without regard to conflict of law principles. Some
+              consumer protection laws may provide rights that cannot be waived
+              by contract.
+            </p>
+          </section>
+
+          <section id="contact">
+            <h2>16. Contact</h2>
+            <p>Questions about these Terms can be sent to:</p>
+            <div class="contact-box">
+              <p><strong>Email:</strong> <a href="mailto:contact@kingofautomation.com">contact@kingofautomation.com</a></p>
+              <p><strong>Website:</strong> <a href="https://postiz.kingofautomation.com">postiz.kingofautomation.com</a></p>
+              <p><strong>Operator:</strong> King of Automation</p>
+            </div>
+          </section>
+        </article>
+      </div>
+    </main>
+
+    <footer>
+      King of Automation provides social media scheduling tools for supported
+      third-party platforms.
+    </footer>
   </body>
 </html>

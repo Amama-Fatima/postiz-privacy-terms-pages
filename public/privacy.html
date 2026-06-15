@@ -4,459 +4,690 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Privacy Policy - King of Automation</title>
+    <meta
+      name="description"
+      content="Privacy Policy for King of Automation, a social media scheduling and automation service."
+    />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;1,500;1,600&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
       rel="stylesheet"
     />
     <style>
       * {
+        box-sizing: border-box;
         margin: 0;
         padding: 0;
-        box-sizing: border-box;
+      }
+
+      :root {
+        --bg: #070707;
+        --panel: #111111;
+        --panel-strong: #181818;
+        --line: #2d2d2d;
+        --text: #f7f7f7;
+        --muted: #b8bec8;
+        --soft: #838b98;
+        --accent: #35c8ff;
+        --accent-2: #1677d2;
+        --warning: #f7c873;
+      }
+
+      html {
+        scroll-behavior: smooth;
       }
 
       body {
-        font-family: "Plus Jakarta Sans", -apple-system, BlinkMacSystemFont,
-          "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-        line-height: 1.6;
-        color: #ffffff;
-        background-color: #000000;
         min-height: 100vh;
-      }
-
-      /* Header */
-      header {
-        background-color: #1a1a1a;
-        border-bottom: 1px solid #2a2a2a;
-        padding: 1rem 2rem;
-        position: sticky;
-        top: 0;
-        z-index: 100;
-      }
-
-      nav {
-        max-width: 1400px;
-        margin: 0 auto;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-      }
-
-      .logo {
-        display: flex;
-        align-items: center;
-        gap: 0.75rem;
-        font-size: 1.5rem;
-        font-weight: 700;
-        color: #ffffff;
-        text-decoration: none;
-      }
-
-      .logo-img {
-        height: 40px;
-        width: auto;
-      }
-
-      .nav-buttons {
-        display: flex;
-        gap: 1rem;
-        align-items: center;
-      }
-
-      .btn {
-        padding: 0.625rem 1.5rem;
-        border-radius: 50px;
-        text-decoration: none;
-        font-weight: 500;
-        font-size: 0.95rem;
-        transition: all 0.2s;
-        border: 1px solid transparent;
-        display: inline-block;
-      }
-
-      .btn-login {
-        color: #ffffff;
-        border-color: #3a3a3a;
-      }
-
-      .btn-login:hover {
-        border-color: #8b5cf6;
-      }
-
-      .btn-signup {
-        background-color: #ffffff;
-        color: #000000;
-        font-weight: 600;
-      }
-
-      .btn-signup:hover {
-        background-color: #f0f0f0;
-      }
-
-      /* Main Content */
-      .container {
-        max-width: 900px;
-        margin: 0 auto;
-        padding: 4rem 2rem;
-      }
-
-      .last-updated {
-        display: inline-block;
-        background-color: #1a1a1a;
-        border: 1px solid #2a2a2a;
-        padding: 0.5rem 1rem;
-        border-radius: 20px;
-        font-size: 0.9rem;
-        color: #9ca3af;
-        margin-bottom: 2rem;
-      }
-
-      h1 {
-        font-size: 4rem;
-        font-weight: 700;
-        color: #ffffff;
-        margin-bottom: 2rem;
-        line-height: 1.1;
-      }
-
-      .intro {
-        font-size: 1.125rem;
-        color: #d1d5db;
-        margin-bottom: 3rem;
+        background:
+          radial-gradient(circle at top left, rgba(53, 200, 255, 0.16), transparent 34rem),
+          linear-gradient(180deg, #050505 0%, var(--bg) 42%, #0b0b0b 100%);
+        color: var(--text);
+        font-family: "Plus Jakarta Sans", -apple-system, BlinkMacSystemFont, "Segoe UI",
+          sans-serif;
         line-height: 1.7;
-      }
-
-      section {
-        margin-bottom: 3rem;
-      }
-
-      h2 {
-        font-size: 2rem;
-        font-weight: 700;
-        color: #ffffff;
-        margin-bottom: 1.5rem;
-      }
-
-      h3 {
-        font-size: 1.5rem;
-        font-weight: 600;
-        color: #ffffff;
-        margin-bottom: 1rem;
-        margin-top: 2rem;
-      }
-
-      p {
-        margin-bottom: 1.25rem;
-        color: #d1d5db;
-        font-size: 1.05rem;
-        line-height: 1.7;
-      }
-
-      ul {
-        list-style: none;
-        padding-left: 0;
-        margin-bottom: 1.25rem;
-      }
-
-      li {
-        margin-bottom: 0.75rem;
-        padding-left: 1.5rem;
-        position: relative;
-        color: #d1d5db;
-        font-size: 1.05rem;
-        line-height: 1.7;
-      }
-
-      li::before {
-        content: "•";
-        position: absolute;
-        left: 0;
-        color: #8b5cf6;
-        font-weight: bold;
-        font-size: 1.2rem;
-      }
-
-      strong {
-        font-weight: 600;
-        color: #ffffff;
-      }
-
-      .contact-info {
-        background-color: #1a1a1a;
-        border: 1px solid #2a2a2a;
-        border-radius: 12px;
-        padding: 1.5rem;
-        margin-top: 1.5rem;
-      }
-
-      .contact-info p {
-        margin-bottom: 0.75rem;
-      }
-
-      .contact-info p:last-child {
-        margin-bottom: 0;
       }
 
       a {
-        color: #a78bfa;
+        color: var(--accent);
         text-decoration: none;
-        transition: color 0.2s;
       }
 
       a:hover {
-        color: #8b5cf6;
+        color: #7fddff;
       }
 
-      @media (max-width: 768px) {
-        header {
-          padding: 1rem;
+      header {
+        position: sticky;
+        top: 0;
+        z-index: 20;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+        background: rgba(7, 7, 7, 0.86);
+        backdrop-filter: blur(16px);
+      }
+
+      nav {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 1.5rem;
+        width: min(1160px, calc(100% - 2rem));
+        margin: 0 auto;
+        padding: 0.9rem 0;
+      }
+
+      .logo {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.75rem;
+        color: var(--text);
+        font-weight: 800;
+        letter-spacing: 0;
+      }
+
+      .logo img {
+        width: 42px;
+        height: 42px;
+        object-fit: contain;
+      }
+
+      .nav-actions {
+        display: flex;
+        align-items: center;
+        gap: 0.75rem;
+      }
+
+      .button {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 42px;
+        border-radius: 6px;
+        border: 1px solid var(--line);
+        padding: 0.65rem 1rem;
+        color: var(--text);
+        font-size: 0.92rem;
+        font-weight: 700;
+        transition: border-color 0.2s ease, background 0.2s ease, color 0.2s ease;
+      }
+
+      .button:hover {
+        border-color: rgba(53, 200, 255, 0.68);
+        color: var(--text);
+      }
+
+      .button.primary {
+        border-color: var(--accent);
+        background: var(--accent);
+        color: #03111a;
+      }
+
+      main {
+        width: min(1160px, calc(100% - 2rem));
+        margin: 0 auto;
+        padding: 4.5rem 0 5rem;
+      }
+
+      .hero {
+        display: grid;
+        grid-template-columns: minmax(0, 1.1fr) minmax(280px, 0.55fr);
+        gap: 3rem;
+        align-items: end;
+        padding-bottom: 3rem;
+        border-bottom: 1px solid var(--line);
+      }
+
+      .eyebrow {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+        margin-bottom: 1.25rem;
+        color: var(--accent);
+        font-size: 0.82rem;
+        font-weight: 800;
+        text-transform: uppercase;
+      }
+
+      .eyebrow::before {
+        content: "";
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+        background: var(--accent);
+      }
+
+      h1 {
+        max-width: 780px;
+        margin-bottom: 1.35rem;
+        color: var(--text);
+        font-size: clamp(2.75rem, 6vw, 5.8rem);
+        font-weight: 800;
+        letter-spacing: 0;
+        line-height: 0.98;
+      }
+
+      .intro {
+        max-width: 760px;
+        color: #d8dde5;
+        font-size: 1.12rem;
+      }
+
+      .summary {
+        border: 1px solid var(--line);
+        border-radius: 8px;
+        background: rgba(17, 17, 17, 0.78);
+        padding: 1.25rem;
+      }
+
+      .summary h2 {
+        margin-bottom: 1rem;
+        font-size: 1rem;
+        text-transform: uppercase;
+        color: var(--soft);
+      }
+
+      .summary dl {
+        display: grid;
+        gap: 0.9rem;
+      }
+
+      .summary dt {
+        color: var(--soft);
+        font-size: 0.82rem;
+        font-weight: 700;
+        text-transform: uppercase;
+      }
+
+      .summary dd {
+        color: var(--text);
+        font-weight: 700;
+      }
+
+      .content {
+        display: grid;
+        grid-template-columns: 260px minmax(0, 1fr);
+        gap: 3rem;
+        align-items: start;
+        padding-top: 3rem;
+      }
+
+      .toc {
+        position: sticky;
+        top: 5.5rem;
+        border-left: 1px solid var(--line);
+        padding-left: 1rem;
+      }
+
+      .toc p {
+        margin-bottom: 0.85rem;
+        color: var(--soft);
+        font-size: 0.82rem;
+        font-weight: 800;
+        text-transform: uppercase;
+      }
+
+      .toc a {
+        display: block;
+        padding: 0.35rem 0;
+        color: var(--muted);
+        font-size: 0.95rem;
+      }
+
+      .toc a:hover {
+        color: var(--accent);
+      }
+
+      article {
+        min-width: 0;
+      }
+
+      section {
+        padding: 2rem 0;
+        border-bottom: 1px solid var(--line);
+      }
+
+      section:first-child {
+        padding-top: 0;
+      }
+
+      h2 {
+        margin-bottom: 1rem;
+        color: var(--text);
+        font-size: clamp(1.55rem, 3vw, 2.25rem);
+        line-height: 1.2;
+      }
+
+      h3 {
+        margin: 1.35rem 0 0.65rem;
+        color: #ffffff;
+        font-size: 1.1rem;
+      }
+
+      p {
+        margin-bottom: 1rem;
+        color: var(--muted);
+        font-size: 1rem;
+      }
+
+      ul {
+        display: grid;
+        gap: 0.7rem;
+        margin: 1rem 0;
+        padding-left: 1.25rem;
+      }
+
+      li {
+        color: var(--muted);
+        padding-left: 0.25rem;
+      }
+
+      li::marker {
+        color: var(--accent);
+      }
+
+      strong {
+        color: #ffffff;
+        font-weight: 700;
+      }
+
+      .notice {
+        border: 1px solid rgba(247, 200, 115, 0.38);
+        border-radius: 8px;
+        background: rgba(247, 200, 115, 0.08);
+        padding: 1rem;
+      }
+
+      .notice p {
+        margin: 0;
+        color: #f3dfb4;
+      }
+
+      .contact-box {
+        display: grid;
+        gap: 0.8rem;
+        margin-top: 1.25rem;
+        border: 1px solid var(--line);
+        border-radius: 8px;
+        background: var(--panel);
+        padding: 1.25rem;
+      }
+
+      .contact-box p {
+        margin: 0;
+      }
+
+      footer {
+        width: min(1160px, calc(100% - 2rem));
+        margin: 0 auto;
+        border-top: 1px solid var(--line);
+        padding: 1.5rem 0 2.25rem;
+        color: var(--soft);
+        font-size: 0.9rem;
+      }
+
+      @media (max-width: 860px) {
+        nav {
+          align-items: flex-start;
+          flex-direction: column;
         }
 
-        .container {
-          padding: 2rem 1.5rem;
+        .nav-actions {
+          width: 100%;
         }
 
-        h1 {
-          font-size: 2.5rem;
+        .button {
+          flex: 1;
         }
 
-        h2 {
-          font-size: 1.5rem;
+        main {
+          padding-top: 2.75rem;
         }
 
-        h3 {
-          font-size: 1.25rem;
+        .hero,
+        .content {
+          grid-template-columns: 1fr;
+          gap: 2rem;
         }
 
-        .intro,
-        p,
-        li {
-          font-size: 1rem;
+        .toc {
+          position: static;
+          border-left: 0;
+          border-top: 1px solid var(--line);
+          padding: 1rem 0 0;
+        }
+      }
+
+      @media (max-width: 560px) {
+        .logo span {
+          font-size: 0.95rem;
         }
 
-        .nav-buttons {
-          gap: 0.5rem;
+        .logo img {
+          width: 34px;
+          height: 34px;
         }
 
-        .btn {
-          padding: 0.5rem 1rem;
-          font-size: 0.875rem;
+        .nav-actions {
+          flex-direction: column;
         }
 
-        .logo-img {
-          height: 32px;
+        .button {
+          width: 100%;
         }
       }
     </style>
   </head>
   <body>
     <header>
-      <nav>
+      <nav aria-label="Primary navigation">
         <a href="https://postiz.kingofautomation.com" class="logo">
-          <img
-            src="king-of-automation.png"
-            alt="King of Automation"
-            class="logo-img"
-          />
+          <img src="king-of-automation.png" alt="King of Automation" />
           <span>King of Automation</span>
         </a>
-        <div class="nav-buttons">
-          <a
-            href="https://postiz.kingofautomation.com/auth/login"
-            class="btn btn-login"
-            >Log In</a
-          >
-          <a
-            href="https://postiz.kingofautomation.com/auth"
-            class="btn btn-signup"
-            >Get Started »</a
-          >
+        <div class="nav-actions">
+          <a href="https://postiz.kingofautomation.com/auth/login" class="button">Log In</a>
+          <a href="https://postiz.kingofautomation.com/auth" class="button primary">Get Started</a>
         </div>
       </nav>
     </header>
 
-    <div class="container">
-      <span class="last-updated">Last updated: <span id="date"></span></span>
-      <h1>Privacy Policy</h1>
-
-      <p class="intro">
-        At King of Automation ("Company," "we," "us," or "our"), we are
-        committed to protecting the privacy and security of our users' personal
-        information. This Privacy Policy outlines how we collect, use, and
-        safeguard the personal information collected on our website. By
-        accessing or using our website, registering for the Website, and
-        providing your personal information, you agree to the terms and
-        conditions of this Privacy Policy.
-      </p>
-
-      <section>
-        <h2>1. Introduction</h2>
-        <p>
-          Welcome to King of Automation. We are committed to protecting your
-          personal information and your right to privacy. This Privacy Policy
-          explains how we collect, use, disclose, and safeguard your information
-          when you use our social media management platform.
-        </p>
-      </section>
-
-      <section>
-        <h2>2. Information We Collect</h2>
-        <p>
-          We collect information that you provide directly to us, including:
-        </p>
-        <ul>
-          <li>
-            <strong>Account Information:</strong> Name, email address, username,
-            and password
-          </li>
-          <li>
-            <strong>Profile Information:</strong> Business name, website,
-            profile picture
-          </li>
-          <li>
-            <strong>Social Media Accounts:</strong> Access tokens and
-            credentials for connected platforms (TikTok, Meta/Facebook,
-            Instagram, Twitter, LinkedIn, etc.)
-          </li>
-          <li>
-            <strong>Content:</strong> Posts, images, videos, and other content
-            you create or schedule through our platform
-          </li>
-          <li>
-            <strong>Usage Data:</strong> Information about how you interact with
-            our service
-          </li>
-        </ul>
-      </section>
-
-      <section>
-        <h2>3. How We Use Your Information</h2>
-        <p>We use the information we collect to:</p>
-        <ul>
-          <li>Provide, maintain, and improve our services</li>
-          <li>
-            Post content to your connected social media accounts on your behalf
-          </li>
-          <li>Send you technical notices, updates, and support messages</li>
-          <li>Respond to your comments and questions</li>
-          <li>Monitor and analyze usage patterns and trends</li>
-          <li>
-            Detect, prevent, and address technical issues and security threats
-          </li>
-        </ul>
-      </section>
-
-      <section>
-        <h2>4. Information Sharing and Disclosure</h2>
-        <p>We may share your information in the following circumstances:</p>
-        <ul>
-          <li>
-            <strong>Social Media Platforms:</strong> We share your content with
-            the social media platforms you've connected (TikTok, Meta, etc.) to
-            post on your behalf
-          </li>
-          <li>
-            <strong>Service Providers:</strong> We work with third-party service
-            providers who perform services on our behalf
-          </li>
-          <li>
-            <strong>Legal Requirements:</strong> If required by law or to
-            protect our rights
-          </li>
-          <li>
-            <strong>Business Transfers:</strong> In connection with any merger,
-            sale, or acquisition of our business
-          </li>
-        </ul>
-      </section>
-
-      <section>
-        <h2>5. Data Security</h2>
-        <p>
-          We implement appropriate technical and organizational measures to
-          protect your personal information. However, no method of transmission
-          over the internet is 100% secure, and we cannot guarantee absolute
-          security.
-        </p>
-      </section>
-
-      <section>
-        <h2>6. Your Rights and Choices</h2>
-        <p>You have the right to:</p>
-        <ul>
-          <li>Access, update, or delete your personal information</li>
-          <li>Disconnect your social media accounts at any time</li>
-          <li>Opt-out of marketing communications</li>
-          <li>Request a copy of your data</li>
-        </ul>
-      </section>
-
-      <section>
-        <h2>7. Third-Party Services</h2>
-        <p>
-          Our service integrates with third-party social media platforms
-          (TikTok, Meta/Facebook, Instagram, Twitter, LinkedIn). These platforms
-          have their own privacy policies, and we encourage you to review them.
-        </p>
-      </section>
-
-      <section>
-        <h2>8. Data Retention</h2>
-        <p>
-          We retain your information for as long as your account is active or as
-          needed to provide you services. You may request deletion of your
-          account at any time.
-        </p>
-      </section>
-
-      <section>
-        <h2>9. Children's Privacy</h2>
-        <p>
-          Our service is not intended for users under the age of 13 (or 16 in
-          the EU). We do not knowingly collect information from children.
-        </p>
-      </section>
-
-      <section>
-        <h2>10. Changes to This Policy</h2>
-        <p>
-          We may update this Privacy Policy from time to time. We will notify
-          you of any changes by posting the new policy on this page and updating
-          the "Last updated" date.
-        </p>
-      </section>
-
-      <section>
-        <h2>11. Contact Us</h2>
-        <p>
-          If you have questions about this Privacy Policy, please contact us:
-        </p>
-        <div class="contact-info">
-          <p>
-            <strong>Email:</strong>
-            <a href="mailto:contact@kingofautomation.com"
-              >contact@kingofautomation.com</a
-            >
-          </p>
-          <p>
-            <strong>Website:</strong>
-            <a href="https://postiz.kingofautomation.com"
-              >postiz.kingofautomation.com</a
-            >
+    <main>
+      <section class="hero" aria-labelledby="page-title">
+        <div>
+          <p class="eyebrow">Privacy Policy</p>
+          <h1 id="page-title">How we protect your social media workspace.</h1>
+          <p class="intro">
+            This Privacy Policy explains how King of Automation collects, uses,
+            shares, and protects information when you use our social media
+            scheduling and automation service, including when you connect
+            Facebook, Instagram, TikTok, X/Twitter, LinkedIn, YouTube, Reddit,
+            or other social accounts supported in the service.
           </p>
         </div>
+        <aside class="summary" aria-label="Policy summary">
+          <h2>Policy Snapshot</h2>
+          <dl>
+            <div>
+              <dt>Effective date</dt>
+              <dd>June 15, 2026</dd>
+            </div>
+            <div>
+              <dt>Service</dt>
+              <dd>Social media scheduling and automation</dd>
+            </div>
+            <div>
+              <dt>Contact</dt>
+              <dd>contact@kingofautomation.com</dd>
+            </div>
+          </dl>
+        </aside>
       </section>
-    </div>
 
-    <script>
-      document.getElementById("date").textContent =
-        new Date().toLocaleDateString("en-US", {
-          year: "numeric",
-          month: "long",
-          day: "numeric",
-        });
-    </script>
+      <div class="content">
+        <aside class="toc" aria-label="Privacy policy sections">
+          <p>Sections</p>
+          <a href="#scope">Scope</a>
+          <a href="#information">Information we collect</a>
+          <a href="#use">How we use information</a>
+          <a href="#platform-data">Connected platform data</a>
+          <a href="#sharing">Sharing</a>
+          <a href="#retention">Retention and deletion</a>
+          <a href="#security">Security</a>
+          <a href="#rights">Your choices</a>
+          <a href="#contact">Contact</a>
+        </aside>
+
+        <article>
+          <section id="scope">
+            <h2>1. Scope</h2>
+            <p>
+              King of Automation ("King of Automation," "we," "us," or "our")
+              provides a self-service platform for planning, scheduling,
+              publishing, and managing social media content. This Policy applies
+              to our website, hosted application, support communications, and
+              related services.
+            </p>
+            <p>
+              This Policy does not replace the privacy policies of the social
+              media platforms you connect. Those platforms process information
+              under their own policies and developer terms.
+            </p>
+          </section>
+
+          <section id="information">
+            <h2>2. Information We Collect</h2>
+            <p>We collect information needed to operate the service, including:</p>
+            <ul>
+              <li>
+                <strong>Account information:</strong> name, email address,
+                password credentials, profile details, business name, and billing
+                or plan information when applicable.
+              </li>
+              <li>
+                <strong>Connected account information:</strong> social account
+                IDs, page IDs, usernames, profile names, profile images, access
+                tokens, refresh tokens, permissions granted, and connection
+                status.
+              </li>
+              <li>
+                <strong>Content and media:</strong> posts, captions, hashtags,
+                images, videos, thumbnails, drafts, scheduling times, approval
+                notes, and publishing history you create or upload.
+              </li>
+              <li>
+                <strong>Usage and device information:</strong> log data, IP
+                address, browser type, device identifiers, pages viewed, feature
+                usage, error reports, and approximate location derived from
+                technical data.
+              </li>
+              <li>
+                <strong>Support communications:</strong> messages, attachments,
+                and other information you send when requesting help.
+              </li>
+            </ul>
+          </section>
+
+          <section id="use">
+            <h2>3. How We Use Information</h2>
+            <p>We use information to:</p>
+            <ul>
+              <li>create, secure, and administer your account;</li>
+              <li>connect your selected social media accounts through OAuth or platform APIs;</li>
+              <li>schedule, publish, retrieve, and manage content at your direction;</li>
+              <li>display connected profiles, pages, channels, calendars, post status, and analytics where available;</li>
+              <li>send service notices, security alerts, support replies, and product updates;</li>
+              <li>monitor reliability, troubleshoot errors, prevent abuse, and protect the service;</li>
+              <li>comply with legal obligations and platform developer requirements.</li>
+            </ul>
+          </section>
+
+          <section id="platform-data">
+            <h2>4. Connected Platform Data</h2>
+            <p>
+              When you connect a third-party platform such as Facebook,
+              Instagram, TikTok, X/Twitter, LinkedIn, YouTube, or Reddit, you
+              authorize us to access only the information and permissions you
+              approve during the connection flow.
+            </p>
+            <p>
+              We use platform access tokens to perform actions you request, such
+              as listing available pages, showing profile information,
+              publishing scheduled posts, retrieving publish status, importing
+              media metadata, or showing analytics if that feature is available.
+            </p>
+            <p>
+              For YouTube and other Google API integrations, our use of
+              information received from Google APIs adheres to the
+              <a href="https://developers.google.com/terms/api-services-user-data-policy">
+                Google API Services User Data Policy</a
+              >, including the Limited Use requirements. Your use of YouTube
+              features is also subject to the
+              <a href="https://www.youtube.com/t/terms">YouTube Terms of Service</a>
+              and the <a href="https://policies.google.com/privacy">Google Privacy Policy</a>.
+              You can revoke access to Google data from your Google account
+              permissions page at
+              <a href="https://security.google.com/settings/security/permissions">
+                security.google.com/settings/security/permissions</a
+              >.
+            </p>
+            <div class="notice">
+              <p>
+                We do not sell connected platform data. We do not use social
+                platform data for advertising profiles. We do not post to your
+                social accounts unless you or an authorized user of your
+                workspace schedules, publishes, or approves that action.
+              </p>
+            </div>
+          </section>
+
+          <section id="sharing">
+            <h2>5. How We Share Information</h2>
+            <p>We share information only where needed to provide or protect the service:</p>
+            <ul>
+              <li>
+                <strong>Social media platforms:</strong> we send content,
+                media, captions, and related data to the platforms you choose so
+                they can publish or process your requested actions.
+              </li>
+              <li>
+                <strong>Service providers:</strong> we may use hosting, storage,
+                analytics, email, payment, security, and support vendors that
+                process information on our behalf.
+              </li>
+              <li>
+                <strong>Workspace members:</strong> information may be visible
+                to users you invite to your workspace according to their role.
+              </li>
+              <li>
+                <strong>Legal and safety reasons:</strong> we may disclose
+                information if required by law, to enforce our terms, or to
+                protect rights, safety, and service integrity.
+              </li>
+              <li>
+                <strong>Business transfers:</strong> information may be
+                transferred if we are involved in a merger, acquisition,
+                financing, reorganization, or sale of assets.
+              </li>
+            </ul>
+          </section>
+
+          <section id="retention">
+            <h2>6. Data Retention and Deletion</h2>
+            <p>
+              We retain account, workspace, connected account, and content data
+              for as long as needed to provide the service, comply with legal
+              obligations, resolve disputes, maintain security, and enforce our
+              agreements.
+            </p>
+            <p>
+              You can disconnect a social account from your King of Automation
+              workspace at any time. Disconnecting removes our ability to use the
+              related access token for future actions, but it does not delete
+              content already published to a third-party platform.
+            </p>
+            <p>
+              To request account deletion or removal of personal information,
+              email <a href="mailto:contact@kingofautomation.com">contact@kingofautomation.com</a>
+              with the subject line "Data Deletion Request." We may need to
+              verify your identity and authority over the account before
+              completing the request.
+            </p>
+          </section>
+
+          <section id="security">
+            <h2>7. Security</h2>
+            <p>
+              We use administrative, technical, and organizational safeguards
+              designed to protect personal information, connected account
+              credentials, and content data. These safeguards may include access
+              controls, encrypted transport, restricted credential handling,
+              monitoring, and least-privilege operational practices.
+            </p>
+            <p>
+              No online service can guarantee absolute security. You are
+              responsible for keeping your login credentials secure, maintaining
+              access to your email account, and promptly notifying us if you
+              suspect unauthorized use.
+            </p>
+          </section>
+
+          <section id="rights">
+            <h2>8. Your Rights and Choices</h2>
+            <p>Depending on your location, you may have rights to:</p>
+            <ul>
+              <li>access, correct, export, or delete personal information;</li>
+              <li>object to or restrict certain processing;</li>
+              <li>withdraw consent where processing is based on consent;</li>
+              <li>disconnect social accounts or revoke platform permissions;</li>
+              <li>opt out of non-essential marketing communications.</li>
+            </ul>
+            <p>
+              You can also revoke King of Automation's access from the settings
+              area of the relevant third-party platform. Some requests may be
+              limited by legal, security, anti-fraud, or operational retention
+              requirements.
+            </p>
+          </section>
+
+          <section>
+            <h2>9. Cookies and Similar Technologies</h2>
+            <p>
+              We may use cookies, local storage, and similar technologies to keep
+              you signed in, remember preferences, measure service performance,
+              troubleshoot errors, and protect against abuse. You can control
+              cookies through your browser settings, but disabling some cookies
+              may affect service functionality.
+            </p>
+          </section>
+
+          <section>
+            <h2>10. International Use</h2>
+            <p>
+              Your information may be processed in countries other than where
+              you live. Where required, we rely on appropriate safeguards for
+              international transfers and take steps designed to protect
+              information according to this Policy.
+            </p>
+          </section>
+
+          <section>
+            <h2>11. Children</h2>
+            <p>
+              The service is intended for business and professional use. It is
+              not directed to children under 13, and we do not knowingly collect
+              personal information from children.
+            </p>
+          </section>
+
+          <section>
+            <h2>12. Changes to This Policy</h2>
+            <p>
+              We may update this Policy from time to time. The updated version
+              will be posted on this page with a revised effective date. Material
+              changes may also be communicated through the service or by email.
+            </p>
+          </section>
+
+          <section id="contact">
+            <h2>13. Contact Us</h2>
+            <p>
+              Questions, privacy requests, and data deletion requests can be sent
+              to:
+            </p>
+            <div class="contact-box">
+              <p><strong>Email:</strong> <a href="mailto:contact@kingofautomation.com">contact@kingofautomation.com</a></p>
+              <p><strong>Website:</strong> <a href="https://postiz.kingofautomation.com">postiz.kingofautomation.com</a></p>
+              <p><strong>Operator:</strong> King of Automation</p>
+            </div>
+          </section>
+        </article>
+      </div>
+    </main>
+
+    <footer>
+      King of Automation provides social media scheduling tools for supported
+      third-party platforms.
+    </footer>
   </body>
 </html>
